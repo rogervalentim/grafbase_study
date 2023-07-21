@@ -8,11 +8,11 @@ const User = g.model('User', {
   description: g.string().optional(),
   githubUrl: g.url().optional(),
   linkedinUrl: g.url().optional(),
-  projects: g.relation(() => Project).list(),
+  projects: g.relation(() => Project).list().optional(),
 })
 
 const Project = g.model('Project', {
-  title: g.string().lenght({ min: 3 }),
+  title: g.string().length({ min: 3 }),
   description: g.string(),
   image: g.url(),
   liveSiteUrl: g.url(),
